@@ -2,10 +2,10 @@
 -- version 5.1.1
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Generation Time: Jan 24, 2022 at 03:41 PM
--- Server version: 10.4.22-MariaDB
--- PHP Version: 8.1.1
+-- Hôte : 127.0.0.1
+-- Généré le : lun. 24 jan. 2022 à 17:08
+-- Version du serveur : 10.4.22-MariaDB
+-- Version de PHP : 8.1.1
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,13 +18,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `diagnosticauto_db`
+-- Base de données : `diagnosticauto_db`
 --
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `client`
+-- Structure de la table `client`
 --
 
 CREATE TABLE `client` (
@@ -41,7 +41,7 @@ CREATE TABLE `client` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `employee`
+-- Structure de la table `employee`
 --
 
 CREATE TABLE `employee` (
@@ -59,7 +59,7 @@ CREATE TABLE `employee` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `make`
+-- Structure de la table `make`
 --
 
 CREATE TABLE `make` (
@@ -71,7 +71,7 @@ CREATE TABLE `make` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `model`
+-- Structure de la table `model`
 --
 
 CREATE TABLE `model` (
@@ -84,7 +84,7 @@ CREATE TABLE `model` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `position`
+-- Structure de la table `position`
 --
 
 CREATE TABLE `position` (
@@ -95,7 +95,7 @@ CREATE TABLE `position` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `service_category`
+-- Structure de la table `service_category`
 --
 
 CREATE TABLE `service_category` (
@@ -108,7 +108,7 @@ CREATE TABLE `service_category` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `task_service`
+-- Structure de la table `task_service`
 --
 
 CREATE TABLE `task_service` (
@@ -122,7 +122,21 @@ CREATE TABLE `task_service` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `ville`
+-- Structure de la table `users`
+--
+
+CREATE TABLE `users` (
+  `id_user` int(11) NOT NULL,
+  `id_employee_user` int(11) NOT NULL,
+  `username_user` varchar(100) NOT NULL,
+  `password_user` varchar(100) NOT NULL,
+  `label_user` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `ville`
 --
 
 CREATE TABLE `ville` (
@@ -134,7 +148,7 @@ CREATE TABLE `ville` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `visit`
+-- Structure de la table `visit`
 --
 
 CREATE TABLE `visit` (
@@ -151,7 +165,7 @@ CREATE TABLE `visit` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `visit_task`
+-- Structure de la table `visit_task`
 --
 
 CREATE TABLE `visit_task` (
@@ -165,7 +179,7 @@ CREATE TABLE `visit_task` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `voiture`
+-- Structure de la table `voiture`
 --
 
 CREATE TABLE `voiture` (
@@ -177,141 +191,153 @@ CREATE TABLE `voiture` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Indexes for dumped tables
+-- Index pour les tables déchargées
 --
 
 --
--- Indexes for table `client`
+-- Index pour la table `client`
 --
 ALTER TABLE `client`
   ADD PRIMARY KEY (`id_client`);
 
 --
--- Indexes for table `employee`
+-- Index pour la table `employee`
 --
 ALTER TABLE `employee`
   ADD PRIMARY KEY (`id_emp`);
 
 --
--- Indexes for table `make`
+-- Index pour la table `make`
 --
 ALTER TABLE `make`
   ADD PRIMARY KEY (`id_make`);
 
 --
--- Indexes for table `model`
+-- Index pour la table `model`
 --
 ALTER TABLE `model`
   ADD PRIMARY KEY (`id_model`);
 
 --
--- Indexes for table `position`
+-- Index pour la table `position`
 --
 ALTER TABLE `position`
   ADD PRIMARY KEY (`id_position`);
 
 --
--- Indexes for table `service_category`
+-- Index pour la table `service_category`
 --
 ALTER TABLE `service_category`
   ADD PRIMARY KEY (`id_service`);
 
 --
--- Indexes for table `task_service`
+-- Index pour la table `task_service`
 --
 ALTER TABLE `task_service`
   ADD PRIMARY KEY (`id_task_service`);
 
 --
--- Indexes for table `ville`
+-- Index pour la table `users`
+--
+ALTER TABLE `users`
+  ADD PRIMARY KEY (`id_user`);
+
+--
+-- Index pour la table `ville`
 --
 ALTER TABLE `ville`
   ADD PRIMARY KEY (`id_ville`);
 
 --
--- Indexes for table `visit`
+-- Index pour la table `visit`
 --
 ALTER TABLE `visit`
   ADD PRIMARY KEY (`id_visit`);
 
 --
--- Indexes for table `visit_task`
+-- Index pour la table `visit_task`
 --
 ALTER TABLE `visit_task`
   ADD PRIMARY KEY (`id_visit_task`);
 
 --
--- Indexes for table `voiture`
+-- Index pour la table `voiture`
 --
 ALTER TABLE `voiture`
   ADD PRIMARY KEY (`id_voiture`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- AUTO_INCREMENT pour les tables déchargées
 --
 
 --
--- AUTO_INCREMENT for table `client`
+-- AUTO_INCREMENT pour la table `client`
 --
 ALTER TABLE `client`
   MODIFY `id_client` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `employee`
+-- AUTO_INCREMENT pour la table `employee`
 --
 ALTER TABLE `employee`
   MODIFY `id_emp` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `make`
+-- AUTO_INCREMENT pour la table `make`
 --
 ALTER TABLE `make`
   MODIFY `id_make` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `model`
+-- AUTO_INCREMENT pour la table `model`
 --
 ALTER TABLE `model`
   MODIFY `id_model` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `position`
+-- AUTO_INCREMENT pour la table `position`
 --
 ALTER TABLE `position`
   MODIFY `id_position` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `service_category`
+-- AUTO_INCREMENT pour la table `service_category`
 --
 ALTER TABLE `service_category`
   MODIFY `id_service` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `task_service`
+-- AUTO_INCREMENT pour la table `task_service`
 --
 ALTER TABLE `task_service`
   MODIFY `id_task_service` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `ville`
+-- AUTO_INCREMENT pour la table `users`
+--
+ALTER TABLE `users`
+  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT pour la table `ville`
 --
 ALTER TABLE `ville`
   MODIFY `id_ville` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `visit`
+-- AUTO_INCREMENT pour la table `visit`
 --
 ALTER TABLE `visit`
   MODIFY `id_visit` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `visit_task`
+-- AUTO_INCREMENT pour la table `visit_task`
 --
 ALTER TABLE `visit_task`
   MODIFY `id_visit_task` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `voiture`
+-- AUTO_INCREMENT pour la table `voiture`
 --
 ALTER TABLE `voiture`
   MODIFY `id_voiture` int(11) NOT NULL AUTO_INCREMENT;
