@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le : lun. 24 jan. 2022 à 17:08
+-- Généré le : mar. 25 jan. 2022 à 14:41
 -- Version du serveur : 10.4.22-MariaDB
 -- Version de PHP : 8.1.1
 
@@ -204,7 +204,9 @@ ALTER TABLE `client`
 -- Index pour la table `employee`
 --
 ALTER TABLE `employee`
-  ADD PRIMARY KEY (`id_emp`);
+  ADD PRIMARY KEY (`id_emp`),
+  ADD KEY `foreignkey_emp_ville` (`id_ville_emp`),
+  ADD KEY `foreignkey_emp_position` (`id_postion_emp`);
 
 --
 -- Index pour la table `make`
@@ -216,7 +218,8 @@ ALTER TABLE `make`
 -- Index pour la table `model`
 --
 ALTER TABLE `model`
-  ADD PRIMARY KEY (`id_model`);
+  ADD PRIMARY KEY (`id_model`),
+  ADD KEY `foreignkey_model_make` (`id_make_model`);
 
 --
 -- Index pour la table `position`
@@ -234,13 +237,15 @@ ALTER TABLE `service_category`
 -- Index pour la table `task_service`
 --
 ALTER TABLE `task_service`
-  ADD PRIMARY KEY (`id_task_service`);
+  ADD PRIMARY KEY (`id_task_service`),
+  ADD KEY `foreignkey_taskservice_servicecat` (`id_service`);
 
 --
 -- Index pour la table `users`
 --
 ALTER TABLE `users`
-  ADD PRIMARY KEY (`id_user`);
+  ADD PRIMARY KEY (`id_user`),
+  ADD KEY `foreignkey_users_emp` (`id_employee_user`);
 
 --
 -- Index pour la table `ville`
@@ -252,19 +257,25 @@ ALTER TABLE `ville`
 -- Index pour la table `visit`
 --
 ALTER TABLE `visit`
-  ADD PRIMARY KEY (`id_visit`);
+  ADD PRIMARY KEY (`id_visit`),
+  ADD KEY `foreignkey_visit_voiture` (`id_voiture_visit`),
+  ADD KEY `foreignkey_visit_client` (`id_client_visit`);
 
 --
 -- Index pour la table `visit_task`
 --
 ALTER TABLE `visit_task`
-  ADD PRIMARY KEY (`id_visit_task`);
+  ADD PRIMARY KEY (`id_visit_task`),
+  ADD KEY `foreignkey_visittask_servicetask` (`id_task_service`),
+  ADD KEY `foreignkey_visittask_visit` (`id_visit`);
 
 --
 -- Index pour la table `voiture`
 --
 ALTER TABLE `voiture`
-  ADD PRIMARY KEY (`id_voiture`);
+  ADD PRIMARY KEY (`id_voiture`),
+  ADD KEY `foreignkey_client_ville` (`id_client_voiture`),
+  ADD KEY `foreignkey_model_voiture` (`id_module_voiture`);
 
 --
 -- AUTO_INCREMENT pour les tables déchargées
@@ -341,6 +352,56 @@ ALTER TABLE `visit_task`
 --
 ALTER TABLE `voiture`
   MODIFY `id_voiture` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- Contraintes pour les tables déchargées
+--
+
+--
+-- Contraintes pour la table `employee`
+--
+ALTER TABLE `employee`
+  ADD CONSTRAINT `foreignkey_emp_position` FOREIGN KEY (`id_postion_emp`) REFERENCES `position` (`id_position`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `foreignkey_emp_ville` FOREIGN KEY (`id_ville_emp`) REFERENCES `ville` (`id_ville`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Contraintes pour la table `model`
+--
+ALTER TABLE `model`
+  ADD CONSTRAINT `foreignkey_model_make` FOREIGN KEY (`id_make_model`) REFERENCES `make` (`id_make`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Contraintes pour la table `task_service`
+--
+ALTER TABLE `task_service`
+  ADD CONSTRAINT `foreignkey_taskservice_servicecat` FOREIGN KEY (`id_service`) REFERENCES `service_category` (`id_service`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Contraintes pour la table `users`
+--
+ALTER TABLE `users`
+  ADD CONSTRAINT `foreignkey_users_emp` FOREIGN KEY (`id_employee_user`) REFERENCES `employee` (`id_emp`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Contraintes pour la table `visit`
+--
+ALTER TABLE `visit`
+  ADD CONSTRAINT `foreignkey_visit_client` FOREIGN KEY (`id_client_visit`) REFERENCES `client` (`id_client`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `foreignkey_visit_voiture` FOREIGN KEY (`id_voiture_visit`) REFERENCES `voiture` (`id_voiture`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Contraintes pour la table `visit_task`
+--
+ALTER TABLE `visit_task`
+  ADD CONSTRAINT `foreignkey_visittask_servicetask` FOREIGN KEY (`id_task_service`) REFERENCES `task_service` (`id_task_service`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `foreignkey_visittask_visit` FOREIGN KEY (`id_visit`) REFERENCES `visit` (`id_visit`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Contraintes pour la table `voiture`
+--
+ALTER TABLE `voiture`
+  ADD CONSTRAINT `foreignkey_client_ville` FOREIGN KEY (`id_client_voiture`) REFERENCES `client` (`id_client`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `foreignkey_model_voiture` FOREIGN KEY (`id_module_voiture`) REFERENCES `model` (`id_model`) ON DELETE CASCADE ON UPDATE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
