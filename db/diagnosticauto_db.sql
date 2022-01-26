@@ -145,6 +145,63 @@ CREATE TABLE `ville` (
   `nom_ville` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Déchargement des données de la table `ville`
+--
+
+INSERT INTO `ville` (`id_ville`, `post_code_ville`, `nom_ville`) VALUES
+(1, 1, 'AL HAJEB'),
+(2, 2, 'AGADIR'),
+(3, 3, 'AL HOCEIMA'),
+(4, 4, 'ASSA ZAG'),
+(5, 5, 'AZILAL'),
+(6, 6, 'BENI MELLAL'),
+(7, 7, ' BENSLIMANE'),
+(8, 8, 'BOUJDOUR'),
+(9, 9, 'BOULEMANE'),
+(10, 10, 'BERRECHID'),
+(11, 11, ' CASABLANCA'),
+(12, 12, 'CHEFCHAOUEN'),
+(13, 13, 'CHTOUKA AIT BAHA'),
+(14, 14, 'CHICHAOUA'),
+(15, 15, 'EL JADIDA'),
+(16, 16, 'EL KELAA DES SRAGHNAS'),
+(17, 17, 'ERRACHIDIA'),
+(18, 18, 'ESSAOUIRA'),
+(19, 19, 'ES SEMARA'),
+(20, 20, 'FES'),
+(21, 21, ' FIGUIG'),
+(22, 22, 'GUELMIM'),
+(23, 23, 'IFRANE'),
+(24, 24, 'KENITRA'),
+(25, 25, 'KHEMISSET'),
+(26, 26, 'KHENIFRA'),
+(27, 27, 'KHOURIBGA'),
+(28, 28, 'LAAYOUNE'),
+(29, 29, 'LARACHE'),
+(30, 30, 'MOHAMMEDIA'),
+(31, 31, ' MARRAKECH'),
+(32, 32, 'MEKNES'),
+(33, 33, 'NADOR'),
+(34, 34, 'OUARZAZATE'),
+(35, 35, 'OUJDA'),
+(36, 36, 'OUED EDDAHAB'),
+(37, 37, 'RABAT'),
+(38, 38, 'SALE'),
+(39, 39, 'SKHIRAT TEMARA'),
+(40, 40, 'SEFROU'),
+(41, 41, ' SAFI'),
+(42, 42, 'SETTAT'),
+(43, 43, 'SIDI KACEM'),
+(44, 44, 'TANGER'),
+(45, 45, 'TAN TAN'),
+(46, 46, 'TAOUNAT'),
+(47, 47, 'TAROUDANNT'),
+(48, 48, 'TATA'),
+(49, 49, 'TAZA'),
+(50, 50, 'TETOUAN'),
+(51, 51, 'TIZNIT');
+
 -- --------------------------------------------------------
 
 --

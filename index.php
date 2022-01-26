@@ -35,13 +35,13 @@ if(!isset($_SESSION['username'])){
           <span class="sr-only">Toggle Menu</span>
         </button>
       </div>
-      <h1><a href="index.html" class="logo">Diagnostic Shop</a></h1>
+      <h1><a href="index.php" class="logo">Diagnostic Shop</a></h1>
       <ul class="list-unstyled components mb-5">
         <li class="active">
-          <a href="index.html"><span class="fa fa-home mr-3"></span> Homepage</a>
+          <a href="index.php"><span class="fa fa-home mr-3"></span> Homepage</a>
         </li>
         <li>
-          <a href="employee.html"><span class="fa fa-user mr-3"></span> Employee</a>
+          <a href="employee.php"><span class="fa fa-user mr-3"></span> Employee</a>
         </li>
         <li>
           <a href="#"><span class="fa fa-sticky-note mr-3"></span> Friends</a>
