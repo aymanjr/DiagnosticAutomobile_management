@@ -46,7 +46,10 @@
                         </div>
                         <div class="form-group col-md-6">
                           <label for="inputVille">Ville</label>
-                          <input type="text" class="form-control" id="inputVille" placeholder="Ville">
+                          <select class="form-control form-control-sm">
+                            <option>ville1</option>
+                            <option>ville2</option>
+                        </select>
                         </div>
                     </div>
                     <div class="form-group">
@@ -106,7 +109,10 @@
                         </div>
                         <div class="form-group col-md-6">
                           <label for="inputVille">Ville</label>
-                          <input type="text" class="form-control" id="inputVille" placeholder="Ville">
+                          <select class="form-control form-control-sm">
+                            <option>ville1</option>
+                            <option>ville2</option>
+                        </select>
                         </div>
                     </div>
                     <div class="form-group">
