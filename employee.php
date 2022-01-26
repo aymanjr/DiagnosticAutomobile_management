@@ -47,7 +47,7 @@
                             <div class="form-group col-md-6">
                                 <label for="inputVille">Ville</label>
                                 <select class="form-control form-control-sm">
-                                    <option disabled>Choiser votre ville</option>
+                                    <option value="none" selected disabled hidden>choissez ville</option>
                                     <option>ville1</option>
                                     <option>ville2</option>
                                 </select>
@@ -111,7 +111,7 @@
                             <div class="form-group col-md-6">
                                 <label for="inputVille">Ville</label>
                                 <select class="form-control form-control-sm">
-                                    <option disabled>Choiser votre ville</option>
+                                    <option value="none" selected disabled hidden>choissez ville</option>
                                     <option>ville1</option>
                                     <option>ville2</option>
                                 </select>
