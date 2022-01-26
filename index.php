@@ -1,3 +1,11 @@
+<?php 
+session_start();
+if(!isset($_SESSION['username'])){
+  header("Location:./login.php");
+}
+
+?>
+  
 <!doctype html>
 <html lang="en">
 
@@ -54,6 +62,9 @@
     <!-- Page Content  -->
     <div id="content" class="p-4 p-md-5 pt-5">
       <h2 class="mb-4">Main Page</h2>
+
+    <h1>Welcome   <?= $_SESSION['username']?></h1>
+
       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore
         magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
         consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
