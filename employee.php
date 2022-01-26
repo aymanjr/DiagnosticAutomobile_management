@@ -7,8 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">
-
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/bootstrap.min.css">
 
@@ -183,6 +183,8 @@
 
 
         <div id="content" class="p-4 p-md-5 pt-5 text-center">
+            
+ 
             <div class="col-lg-12 d-flex justify-content-between align-items-center">
                 <div>
                     <h4 class="text-center">Employee</h4>
@@ -192,12 +194,53 @@
                 </div>
             </div>
             <hr>
-
+            <!--  -->
+            <div class="row">
+                <div class="col-xl-3 col-md-6">
+                    <div class="card bg-primary text-white mb-4">
+                        <div class="card-body">Nomber Employee</div>
+                        <div class="card-footer text-center ">
+                            <div class="small text-white ">1000</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-md-6">
+                    <div class="card bg-warning text-white mb-4">
+                        <div class="card-body">Employee Disble</div>
+                        <div class="card-footer text-center ">
+                            <div class="small text-white ">1000</div>
+                            <!-- <div class="small text-white"><i class="fas fa-angle-right"></i></div> -->
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-md-6">
+                    <div class="card bg-success text-white mb-4">
+                        <div class="card-body">Employee Active</div>
+                        <div class="card-footer text-center ">
+                            <div class="small text-white ">1000</div>
+                            <!-- <div class="small text-white"><i class="fas fa-angle-right"></i></div> -->
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-md-6">
+                    <div class="card bg-danger text-white mb-4">
+                        <div class="card-body">Nouvelle Employee</div>
+                        <div class="card-footer text-center ">
+                            <div class="small text-white ">1000</div>
+                            <!-- <div class="small text-white"><i class="fas fa-angle-right"></i></div> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--  -->
+            <hr>
             <div class="row">
                 <div class="col-lg-12">
                     <div id="showAlert">Messgae If Error</div>
                 </div>
             </div>
+
+
 
             <table class="table table-striped">
                 <thead class="thead-dark">
