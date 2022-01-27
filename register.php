@@ -5,12 +5,12 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-     <link rel="stylesheet" href="./css/login_style.css">
-    <title>Diagnosstic System</title>
+    <link rel="stylesheet" href="./css/login_style.css">
+    <title>Client</title>
 </head>
 <body>
 
-    <form action="" method="POST">
+    <form action="register_querry.php" method="POST">
 		<h1>Register</h1>
 		<label>Nom</label>
 		<input type="text" name="Nom" />
@@ -29,7 +29,7 @@
 		<label>Password</label>
 		<input type="text" name="Password" />
 		<br>
-		<button  class="btn" type="submit" name="login">Log In</button>
+		<button  class="btn" type="submit" name="Register">Register</button>
 
 
 	</form>

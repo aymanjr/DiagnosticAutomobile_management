@@ -53,8 +53,8 @@
 		<br>
 		<button  class="btn" type="submit" name="login">Log In</button>
 
-
-        Nouvelle Client register ici : <a href="./Client/register.php"></a>
+          <br>
+        Nouvelle Client register ici : <a href="./Client/register.php">Register</a>
 	</form>
 
 
