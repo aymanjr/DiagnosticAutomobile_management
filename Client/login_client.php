@@ -46,14 +46,15 @@
 
     <form action="" method="POST">
 		<h1>Login</h1>
-		<label>Username</label>
-		<input type="text" name="username" />
+		<label>CIN</label>
+		<input type="text" name="Cin" />
 		<label>Password</label>
-		<input type="password" name="password" />
+		<input type="password" name="Password" />
 		<br>
 		<button  class="btn" type="submit" name="login">Log In</button>
 
-
+          <br>
+        Nouvelle Client register ici : <a href="register.php">Register</a>
 	</form>
 
 

@@ -10,7 +10,7 @@
 </head>
 <body>
 
-    <form action="register_querry.php" method="POST">
+    <form action="./register_querry.php" method="POST">
 		<h1>Register</h1>
 		<label>Nom</label>
 		<input type="text" name="Nom" />

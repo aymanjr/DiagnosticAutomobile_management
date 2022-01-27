@@ -1,6 +1,6 @@
 <?php
 	session_start();
-	require_once 'db/connection.php';
+	require_once 'E:\xampp\htdocs\DiagnosticAutomobile_management\db\connection.php';
  
 	if(ISSET($_POST['Register'])){
 		if($_POST['nom'] != "" || $_POST['prenom'] != "" || $_POST['cin'] != "" || $_POST['Email'] != "" 
