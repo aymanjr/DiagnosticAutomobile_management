@@ -52,6 +52,9 @@
 		<input type="password" name="password" />
 		<br>
 		<button  class="btn" type="submit" name="login">Log In</button>
+
+
+        Nouvelle Client register ici : <a href="./Client/register.php"></a>
 	</form>
 
 
