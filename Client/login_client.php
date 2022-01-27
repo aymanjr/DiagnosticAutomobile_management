@@ -1,23 +1,23 @@
 
     <?php 
-    include 'db\connection.php';
+    include 'E:\xampp\htdocs\DiagnosticAutomobile_management\db\connection.php';
             session_start();
             
             if(isset($_POST['login'])){
-                if(empty($_POST['username']) or empty($_POST['password'])  ){
+                if(empty($_POST['Cin']) or empty($_POST['Password'])  ){
                     
-                    echo"<center> <h1>Username ,  Pass peux pas etre Vide .... !</h1> </center>";
+                    echo"<center> <h1>Cin ,  Pass peux pas etre Vide .... !</h1> </center>";
                 }else {
 
-                    $Username = trim($_POST['username']);
-                    $Pass = $_POST['password'];
+                    $Cin = trim($_POST['Cin']);
+                    $Pass = $_POST['Password'];
     
-                    $querry = $connection->prepare("SELECT * FROM users WHERE username_user=? and password_user = ? ");
-                    $querry->execute(array($Username,$Pass));
+                    $querry = $connection->prepare("SELECT * FROM Client WHERE cin_client=? and pass_client = ? ");
+                    $querry->execute(array($Cin,$Pass));
                     $control = $querry->fetch(PDO::FETCH_OBJ);
 
                     if($control){
-                        $_SESSION['username']= $Username;
+                        $_SESSION['Cin']= $Cin;
                        header("Location:index.php");
                        // echo $_SESSION['username'];
 

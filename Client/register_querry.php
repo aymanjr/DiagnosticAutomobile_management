@@ -36,7 +36,7 @@
 		}else{
 			echo "
 				<script>alert('entrer tout les champ et merci ! ')</script>
-				<script>window.location = 'register.php'</script>
+				<script>window.location = 'login_client.php'</script>
 			";
 		}
 	}
