@@ -22,7 +22,7 @@
                        // echo $_SESSION['username'];
 
                     }else{
-                       echo"<center><h1> incorrect username ou password .....</h1></center>";
+                       echo"<script>alert('incorrect username ou password' )</script>";
                     }
 
                 }
