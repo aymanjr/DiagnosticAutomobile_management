@@ -18,6 +18,7 @@
 
                     if($control){
                         $_SESSION['Cin']= $Cin;
+                        
                        header("Location:index.php");
                        // echo $_SESSION['username'];
 
