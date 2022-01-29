@@ -12,7 +12,7 @@
           <a href="index.php"><span class="fa fa-home mr-3"></span> Homepage</a>
         </li>
         <li>
-          <a href="profile.php"><span class="fa fa-user mr-3"></span> Profile</a>
+          <a href="employee.php"><span class="fa fa-user mr-3"></span> Employees</a>
         </li>
         <li>
           <a href="#"><span class="fa fa-sticky-note mr-3"></span> Friends</a>

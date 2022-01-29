@@ -2,7 +2,31 @@
 session_start();
 if(!isset($_SESSION['Cin'])){
   header("Location:login_client.php");
-}
+}else {
+  
+  $cin  = $_SESSION['Cin'];
+  include 'E:\xampp\htdocs\DiagnosticAutomobile_management\db\connection.php';
+
+       $sql  = "SELECT * from client where cin_client  =  '$cin' ";
+
+       $result  = $connection ->query($sql) ->fetchAll(PDO::FETCH_ASSOC);
+
+       if($result){
+         foreach ($result as  $value) {
+          
+        
+          $nom_client = $value['nom_client'];
+          $prenom_client = $value['prenom_client'];
+          $societer_client   = $value['societer_client'];
+          $adress_client =   $value['adress_client'];
+          $email_client   = $value['email_client'];
+          $tele_client = $value['tele_client'];
+          $pass_client  = $value['pass_client'];
+
+         }
+        }
+      }
+  
 
 ?>
   
@@ -35,11 +59,11 @@ if(!isset($_SESSION['Cin'])){
     <div id="content" class="p-4 p-md-5 pt-5">
      
     <div class="container bootstrap snippets bootdey">
-    <h1 class="text-primary">Edit Profile</h1>
+    <h1 class="text-primary">Modifier Profile</h1>
       <hr>
 	<div class="row">
       <!-- left column -->
-     
+    
       
       <!-- edit form column -->
       <div class="col-md-9 personal-info">
@@ -48,51 +72,55 @@ if(!isset($_SESSION['Cin'])){
           <i class="fa fa-coffee"></i>
           This is an <strong>.alert</strong>. Use this to show important messages to the user.
         </div>
-        <h3>Personal info</h3>
+        <h3>Informations Personel</h3>
         
-        <form class="form-horizontal" role="form">
+        <form class="form-horizontal" role="form" action="update.php">
           <div class="form-group">
-            <label class="col-lg-3 control-label">First name:</label>
+            <label class="col-lg-3 control-label">Nom :</label>
             <div class="col-lg-8">
-              <input class="form-control" type="text" value="dey-dey">
+              <input class="form-control" type="text" value="<?= $nom_client ?>">
             </div>
           </div>
           <div class="form-group">
-            <label class="col-lg-3 control-label">Last name:</label>
+            <label class="col-lg-3 control-label">Prenom :</label>
             <div class="col-lg-8">
-              <input class="form-control" type="text" value="bootdey">
+              <input class="form-control" type="text" value="<?= $prenom_client ?>">
             </div>
           </div>
           <div class="form-group">
-            <label class="col-lg-3 control-label">Company:</label>
+            <label class="col-lg-3 control-label">Societer :</label>
             <div class="col-lg-8">
-              <input class="form-control" type="text" value="">
+              <input class="form-control" type="text" value="<?= $societer_client ?>">
             </div>
+          </div>
+          <div class="form-group">
+            <label class="col-lg-3 control-label">Adress  :</label>
+            <div class="col-lg-8">
+              <input class="form-control" type="text" value="<?= $adress_client ?>">
+            </div>
+          </div>
           </div>
           <div class="form-group">
             <label class="col-lg-3 control-label">Email:</label>
             <div class="col-lg-8">
-              <input class="form-control" type="text" value="janesemail@gmail.com">
+              <input class="form-control" type="text" value="<?= $email_client ?>">
             </div>
+          </div>
           </div>
           <div class="form-group">
-            <label class="col-lg-3 control-label">Time Zone:</label>
+            <label class="col-lg-3 control-label">Tel :</label>
             <div class="col-lg-8">
-              <div class="ui-select">
-                <select id="user_time_zone" class="form-control">
-                  <option value="Hawaii">(GMT-10:00) Hawaii</option>
-                  <option value="Alaska">(GMT-09:00) Alaska</option>
-                  <option value="Pacific Time (US &amp; Canada)">(GMT-08:00) Pacific Time (US &amp; Canada)</option>
-                  <option value="Arizona">(GMT-07:00) Arizona</option>
-                  <option value="Mountain Time (US &amp; Canada)">(GMT-07:00) Mountain Time (US &amp; Canada)</option>
-                  <option value="Central Time (US &amp; Canada)" selected="selected">(GMT-06:00) Central Time (US &amp; Canada)</option>
-                  <option value="Eastern Time (US &amp; Canada)">(GMT-05:00) Eastern Time (US &amp; Canada)</option>
-                  <option value="Indiana (East)">(GMT-05:00) Indiana (East)</option>
-                </select>
-              </div>
+              <input class="form-control" type="text" value="<?= $tele_client ?>">
             </div>
           </div>
-          <button  style="color: black;" type="submit" name="login">Update</button>
+          </div>
+          <div class="form-group">
+            <label class="col-lg-3 control-label">Password:</label>
+            <div class="col-lg-8">
+              <input class="form-control" type="text" value="<?= $pass_client ?>">
+            </div>
+          </div>
+          <button  style="color: black;" type="submit" name="update">Update</button>
          </form>
       </div>
   </div>
