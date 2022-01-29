@@ -74,50 +74,50 @@ if(!isset($_SESSION['Cin'])){
         </div>
         <h3>Informations Personel</h3>
         
-        <form class="form-horizontal" role="form" action="update.php">
+        <form class="form-horizontal" role="form" action="update_client.php" method="POST">
           <div class="form-group">
             <label class="col-lg-3 control-label">Nom :</label>
             <div class="col-lg-8">
-              <input class="form-control" type="text" value="<?= $nom_client ?>">
+              <input class="form-control" type="text" value="<?= $nom_client ?>" name="nom_client">
             </div>
           </div>
           <div class="form-group">
             <label class="col-lg-3 control-label">Prenom :</label>
             <div class="col-lg-8">
-              <input class="form-control" type="text" value="<?= $prenom_client ?>">
+              <input class="form-control" type="text" value="<?= $prenom_client ?>" name="prenom_client">
             </div>
           </div>
           <div class="form-group">
             <label class="col-lg-3 control-label">Societer :</label>
             <div class="col-lg-8">
-              <input class="form-control" type="text" value="<?= $societer_client ?>">
+              <input class="form-control" type="text" value="<?= $societer_client ?>" name="societer_client">
             </div>
           </div>
           <div class="form-group">
             <label class="col-lg-3 control-label">Adress  :</label>
             <div class="col-lg-8">
-              <input class="form-control" type="text" value="<?= $adress_client ?>">
+              <input class="form-control" type="text" value="<?= $adress_client ?>" name="adress_client">
             </div>
           </div>
           </div>
           <div class="form-group">
             <label class="col-lg-3 control-label">Email:</label>
             <div class="col-lg-8">
-              <input class="form-control" type="text" value="<?= $email_client ?>">
+              <input class="form-control" type="text" value="<?= $email_client ?>" name="email_client">
             </div>
           </div>
           </div>
           <div class="form-group">
             <label class="col-lg-3 control-label">Tel :</label>
             <div class="col-lg-8">
-              <input class="form-control" type="text" value="<?= $tele_client ?>">
+              <input class="form-control" type="text" value="<?= $tele_client ?>" name="tele_client">
             </div>
           </div>
           </div>
           <div class="form-group">
             <label class="col-lg-3 control-label">Password:</label>
             <div class="col-lg-8">
-              <input class="form-control" type="text" value="<?= $pass_client ?>">
+              <input class="form-control" type="text" value="<?= $pass_client ?>" name="pass_client">
             </div>
           </div>
           <button  style="color: black;" type="submit" name="update">Update</button>
