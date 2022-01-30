@@ -19,14 +19,12 @@
 
         $sql = " UPDATE `client` SET `nom_client`= '$nom_client',
         `prenom_client`='$prenom_client',
-        `societer_client`='$societer_client',`adress_client`=' $adress_client',
+        `societer_client`='$societer_client',`adress_client`='$adress_client',
         `email_client`='$email_client',`tele_client`='$tele_client',
         `pass_client`='$pass_client' WHERE cin_client = '$cin'";
 
-         
-       $statement = $connection->prepare($sql);
 
-       if ($statement->execute()) {
+       if ($connection->prepare($sql)->execute()) {
        header("Location:profile.php");
        
        } 
