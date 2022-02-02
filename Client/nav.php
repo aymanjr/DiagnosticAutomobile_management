@@ -15,7 +15,7 @@
           <a href="profile.php"><span class="fa fa-user mr-3"></span> Profile</a>
         </li>
         <li>
-          <a href="#"><span class="fa fa-sticky-note mr-3"></span> Friends</a>
+          <a href="#"><span class="fa fa-sticky-note mr-3"></span> Services </a>
         </li>
         <li>
           <a href="#"><span class="fa fa-sticky-note mr-3"></span> Subcription</a>
