@@ -464,3 +464,50 @@ COMMIT;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+
+
+
+
+
+--insertion   make
+INSERT INTO make(code_make, nom_make) VALUES('Acr','Acura'),
+ ('Alfa','Alfa Romeo'),
+('Aston','Aston Martin'),
+ ('Audi','Audi'),
+ ('Bentley','Bentley'),
+ ('BMW','BMW'),
+ ('Chevrolet','Chevrolet'),
+ ('Citroen','Citroen'),
+ ('Dacia','Dacia'),
+ ('Dodge','Dodge'),
+ ('Ferrari','Ferrari'),
+ ('Fiat','Fiat'),
+ ('Ford','Ford'),
+ ('Honda','Honda'),
+ ('Hyundai','Hyundai'),
+ ('Infiniti','Infiniti'),
+ ('Isuzu','Isuzu'),
+ ('Jaguar','Jaguar'),
+ ('Jeep','Jeep'),
+ ('Kia','Kia'),
+ ('Lamborghini','Lamborghini'),
+ ('Land Rover','Land Rover'),
+ ('Lexus','Lexus'),
+ ('Maserati','Maserati'),
+ ('Mazda','Mazda'),
+ ('Mercedes','Mercedes'),
+ ('Mini','Mini'),
+ ('Mitsubishi','Mitsubishi'),
+ ('Nissan','Nissan'),
+ ('Opel','Opel'),
+ ('Peugeot','Peugeot'),
+ ('Porsche','Porsche'),
+ ('Renault','Renault'),
+ ('Rover','Rover'),
+ ('Seat','Seat'),
+ ('Skoda','Skoda'),
+ ('Suzuki','Suzuki'),
+ ('Tesla','Tesla'),
+ ('Toyota','Toyota'),
+ ('Volkswagen','Volkswagen'),
+ ('Volvo','Volvo')

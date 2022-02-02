@@ -28,6 +28,8 @@
        header("Location:profile.php");
        
        } 
+
+       
          
 
      }
