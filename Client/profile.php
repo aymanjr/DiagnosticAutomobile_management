@@ -59,7 +59,7 @@ if(!isset($_SESSION['Cin'])){
     <div id="content" class="p-4 p-md-5 pt-5">
      
     <div class="container bootstrap snippets bootdey">
-    <h1 class="text-primary">Modifier Profile</h1>
+    <h1 class="text-primary">Modifier Profile || <span><a href="#">Ma Voiture</a></span></h1>
       <hr>
 	<div class="row">
       <!-- left column -->
@@ -68,7 +68,7 @@ if(!isset($_SESSION['Cin'])){
       <!-- edit form column -->
       <div class="col-md-9 personal-info">
         <div class="alert alert-info alert-dismissable">
-          <a class="panel-close close" data-dismiss="alert">×</a> 
+          <a class="panel-close close" data-dismiss="alert"></a> 
           <i class="fa fa-coffee"></i>
           This is an <strong>.alert</strong>. Use this to show important messages to the user.
         </div>

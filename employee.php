@@ -1,5 +1,25 @@
+<?php 
+session_start();
+if(!isset($_SESSION['username'])){
+  header("Location:./login.php");
+ }else {
+
+
+    include 'E:\xampp\htdocs\DiagnosticAutomobile_management\db\connection.php';
+
+    $sql  = "SELECT * from employee";
+
+    $stmt = $connection->query($sql);
+    if($stmt === false){
+        die("Error");
+    }
+    
+
+ }
+
+?>
 <!doctype html>
-<html lang="en">
+<html>
 
 <head>
 
@@ -229,16 +249,16 @@
                     </tr>
                 </thead>
                 <tbody>
+                <?php while($row = $stmt->fetch(PDO::FETCH_ASSOC)) : ?>
                     <tr>
-                        <td>1</td>
-                        <td>AHMED</td>
-                        <td>FLAN</td>
-                        <td>1988</td>
-                        <td>CASABLANCA</td>
-                        <td>06000000</td>
-                        <td>E-MAIL@EMAIL.COM</td>
-                        <td class="text-success">TURE</td>
-
+                    <td><?php echo htmlspecialchars($row['id_emp']); ?></td>
+                    <td><?php echo htmlspecialchars($row['nom_emp']); ?></td>
+                    <td><?php echo htmlspecialchars($row['prenom_emp']); ?></td>
+                    <td><?php echo htmlspecialchars($row['date_naissance_emp']); ?></td>
+                    <td><?php echo htmlspecialchars($row['']); ?></td>
+                    <td><?php echo htmlspecialchars($row['id']); ?></td>
+                    <td><?php echo htmlspecialchars($row['id']); ?></td>
+                    <td class="text-success"><?php echo htmlspecialchars($row['id']); ?></td>
                         <td>
                             <a class="btn btn-warning btn-sm rounded-pill py-0" href="#" id="" data-toggle="modal" data-target="#updatemp">Modifer</a>
                             <a class="btn btn-danger btn-sm rounded-pill py-0" href="#" id="">Supprission</a>
