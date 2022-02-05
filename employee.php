@@ -8,7 +8,9 @@ if(!isset($_SESSION['username'])){
     include 'E:\xampp\htdocs\DiagnosticAutomobile_management\db\connection.php';
 
     $sql  = "SELECT * from employee";
-
+    
+    $sqlville  = "SELECT nom_ville FROM `ville` where id_ville = ";
+    
     $stmt = $connection->query($sql);
     if($stmt === false){
         die("Error");
@@ -18,7 +20,7 @@ if(!isset($_SESSION['username'])){
  }
 
 ?>
-<!doctype html>
+<!DOCTYPE html>
 <html>
 
 <head>
@@ -249,39 +251,41 @@ if(!isset($_SESSION['username'])){
                     </tr>
                 </thead>
                 <tbody>
-                <?php while($row = $stmt->fetch(PDO::FETCH_ASSOC)) : ?>
+                <?php
+                
+                while($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+                    $villeid = $row['id_ville_emp'];
+                    $sqlville  = "SELECT * FROM `ville` where id_ville = '$villeid'";
+   
+                    $result  = $connection ->query($sqlville) ->fetchAll(PDO::FETCH_ASSOC);
+                    
+                    if($result){
+                    foreach ($result as  $value) {
+                       $ville = $value['nom_ville'];
+                    }}
+         
+                    ?>
                     <tr>
+
                     <td><?php echo htmlspecialchars($row['id_emp']); ?></td>
                     <td><?php echo htmlspecialchars($row['nom_emp']); ?></td>
                     <td><?php echo htmlspecialchars($row['prenom_emp']); ?></td>
                     <td><?php echo htmlspecialchars($row['date_naissance_emp']); ?></td>
-                    <td><?php echo htmlspecialchars($row['']); ?></td>
-                    <td><?php echo htmlspecialchars($row['id']); ?></td>
-                    <td><?php echo htmlspecialchars($row['id']); ?></td>
-                    <td class="text-success"><?php echo htmlspecialchars($row['id']); ?></td>
+                    <td><?= $ville?></td>
+                    <td><?php echo htmlspecialchars($row['tel_emp']); ?></td>
+                    <td><?php echo htmlspecialchars($row['email_emp']); ?></td>
+                    <td class="text-success"><?php 
+                      if($row['is_active_emp'] == 1){
+                          echo 'ACTIVE';
+                      }else{
+                        echo 'NOT ACTIVE';
+                      }
+                    ?></td>
                         <td>
                             <a class="btn btn-warning btn-sm rounded-pill py-0" href="#" id="" data-toggle="modal" data-target="#updatemp">Modifer</a>
                             <a class="btn btn-danger btn-sm rounded-pill py-0" href="#" id="">Supprission</a>
                         </td>
-
-                    </tr>
-                    <tr>
-                        <td>1</td>
-                        <td>AHMED</td>
-                        <td>FLAN</td>
-                        <td>1988</td>
-                        <td>CASABLANCA</td>
-                        <td>06000000</td>
-                        <td>E-MAIL@EMAIL.COM</td>
-                        <td class="text-danger">FALSE</td>
-
-                        <td>
-                            <a class="btn btn-warning btn-sm rounded-pill py-0" id="" href="#" data-toggle="modal" data-target="#updatemp">Modifer</a>
-                            <a class="btn btn-danger btn-sm rounded-pill py-0" href="#" id="">Supprission</a>
-                        </td>
-
-                    </tr>
-
+                    <?php  }?>
                 </tbody>
             </table>
         </div>

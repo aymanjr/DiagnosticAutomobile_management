@@ -10,7 +10,7 @@ if(!isset($_SESSION['Cin'])){
        $sql  = "SELECT * from client where cin_client  =  '$cin' ";
 
        $result  = $connection ->query($sql) ->fetchAll(PDO::FETCH_ASSOC);
-
+      
        if($result){
          foreach ($result as  $value) {
           
