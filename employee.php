@@ -102,7 +102,23 @@ if(!isset($_SESSION['username'])){
     </div>
 
     <!-- end modal -->
+    <?php
+                
+                while($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+                    $villeid = $row['id_ville_emp'];
+                    $sqlville  = "SELECT * FROM `ville` where id_ville = '$villeid'";
+   
+                    $result  = $connection ->query($sqlville) ->fetchAll(PDO::FETCH_ASSOC);
+                    
+                    if($result){
+                    foreach ($result as  $value) {
+                       $ville = $value['nom_ville'];
+                    }}
 
+
+                    
+         
+                    ?>
     <!-- Modal Update Employee -->
     <div class="modal fade" id="updatemp" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
@@ -118,17 +134,18 @@ if(!isset($_SESSION['username'])){
                         <div class="form-row">
                             <div class="form-group col-md-6">
                                 <label for="inputNom">Nom</label>
-                                <input type="text" class="form-control" id="inputNom" placeholder="Nom">
+                                <input type="text" class="form-control" id="inputNom" placeholder="Nom" value="<?=$row['nom_emp']?>">
                             </div>
                             <div class="form-group col-md-6">
                                 <label for="inputPrenom">Prenom</label>
-                                <input type="text" class="form-control" id="inputPrenom" placeholder="Prenom">
+                                <input type="text" class="form-control" id="inputPrenom" placeholder="Prenom" value="<?=$row['nom_emp']?>>
                             </div>
                         </div>
+                        
                         <div class="form-row">
                             <div class="form-group col-md-6">
                                 <label for="inputDatenaissance">Date Naissance</label>
-                                <input type="date" class="form-control" id="inputdatenaissance" placeholder="datenaissance">
+                                <input type="date" class="form-control" id="inputdatenaissance" placeholder="datenaissance" value="<?=$row['nom_emp']?>>
                             </div>
                             <div class="form-group col-md-6">
                                 <label for="inputVille">Ville</label>
@@ -251,20 +268,7 @@ if(!isset($_SESSION['username'])){
                     </tr>
                 </thead>
                 <tbody>
-                <?php
-                
-                while($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
-                    $villeid = $row['id_ville_emp'];
-                    $sqlville  = "SELECT * FROM `ville` where id_ville = '$villeid'";
-   
-                    $result  = $connection ->query($sqlville) ->fetchAll(PDO::FETCH_ASSOC);
-                    
-                    if($result){
-                    foreach ($result as  $value) {
-                       $ville = $value['nom_ville'];
-                    }}
-         
-                    ?>
+              
                     <tr>
 
                     <td><?php echo htmlspecialchars($row['id_emp']); ?></td>
