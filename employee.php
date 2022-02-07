@@ -138,14 +138,13 @@ if(!isset($_SESSION['username'])){
                             </div>
                             <div class="form-group col-md-6">
                                 <label for="inputPrenom">Prenom</label>
-                                <input type="text" class="form-control" id="inputPrenom" placeholder="Prenom" value="<?=$row['nom_emp']?>>
+                                <input type="text" class="form-control" id="inputPrenom" placeholder="Prenom" >
                             </div>
                         </div>
-                        
                         <div class="form-row">
                             <div class="form-group col-md-6">
                                 <label for="inputDatenaissance">Date Naissance</label>
-                                <input type="date" class="form-control" id="inputdatenaissance" placeholder="datenaissance" value="<?=$row['nom_emp']?>>
+                                <input type="date" class="form-control" id="inputdatenaissance" placeholder="datenaissance">
                             </div>
                             <div class="form-group col-md-6">
                                 <label for="inputVille">Ville</label>
